@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <style>
+       /* Navbar style */
+#header {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    background-color: #121212; 
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+body {
+    padding-top: 110px; 
+}
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            flex-grow: 1; 
+        }
+
+        /* Login container settings */
+        .login-container, .instructions-card {
+        background-color: #fcf3e3;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(52, 151, 181, 0.1);
+        max-width: 600px; /* Increased width */
+        width: 100%;
+    }
+        /* Form title */
+        .login-container h2 {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        /* Input styles */
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+        }
+
+        /* Button styles */
+        .login-container input[type="submit"],
+        .login-container input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #895159;
+        }
+
+        .login-container input[type="reset"] {
+            background-color: #2e109e;
+        }
+
+        /* Hover effects for buttons */
+        .login-container input[type="submit"]:hover,
+        .login-container input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+
+        /* Instruction card */
+        .instructions-card {
+            font-size: 14px;
+            color: #8b3b3b;
+            line-height: 1.5;
+        }
+
+        .instructions-card h3 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 16px;
+            color:#8b3b3b; 
+        }
+        .active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: 0.3;
+}
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+.tutorial-box {
+    background-color:#fcf3e3; 
+    
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(52, 151, 181, 0.1);
+    max-width: 900px; /* Sesuaikan lebar jika diperlukan */
+    width: 100%;
+}
+
+        /* Footer settings */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+            background: #fafafa;
+            padding-block: 40px 60px;
+        }
+
+        .top-footer p {
+            font-size: 25px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .middle-footer .footer-menu {
+            display: flex;
+        }
+
+        .footer_menu_list {
+            list-style: none;
+        }
+
+        .footer_menu_list a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            margin-inline: 20px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 30px;
+        }
+
+        .bottom-footer {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #000000;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <nav id="header">
+          <div class="nav-logo">
+            <p class="nav-name">Dhea</p>
+            <span>.</span>
+          </div>
+          <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+              <li class="nav_list">
+                <a href="index.html#home" class="nav-link active-link">Home</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="index.html#about" class="nav-link">About</a>
+                <div class="circle"></div>
+              </li>
+              
+                <li class="nav_list">
+                  <a href="index.html#turorials" class="nav-link  active-link">Tutorial</a>
+                  <div class="circle"></div>
+              </li>
+  
+                   
+              <li class="nav_list">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <div class="circle"></div>
+            </li>
+  
+              <li class="nav_list">
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <div class="circle"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-button">
+            <button class="btn" onclick="showModal()">
+            <a href="CV.html" class="nav-link">
+              Lihat CV </a>
+            </button>
+          </div>
+         
+        </div>
+          <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+          </div>
+        </nav>
+    <div class="container">
+        <!-- Form Registrasi -->
+        <div class="login-container">
+            <h2>Registrasi</h2>
+            <form action="form.html" method="POST">
+                <label for="nim">NIM:</label>
+                <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required>
+
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
+
+                <label for="jurusan">Jurusan:</label>
+                <input type="text" id="jurusan" name="jurusan" placeholder="Masukkan Jurusan" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+
+                <input type="submit" value="Daftar">
+                <input type="reset" value="Reset"> <!-- Tambahkan tombol reset di sini -->
+            </form>
+        </div>
+
+        <div class="tutorial-box">
+          <h2 style="text-align: center;">Tutorial: Form Registrasi</h2>
+            <p>
+                Untuk membuat formulir registrasi, mulailah dengan membuat file HTML yang menyertakan struktur dasar seperti elemen
+                header untuk navigasi, diikuti dengan kontainer formulir yang berisi input untuk NIM, Nama, Jurusan, Email, dan Password,
+                serta tombol untuk mengirimkan dan mereset data. Sertakan juga bagian instruksi di bawah formulir untuk memberi penjelasan 
+                singkat kepada pengguna tentang fungsinya. Di bagian bawah halaman, tambahkan footer yang mencakup informasi pemilik, tautan ke 
+                berbagai bagian, dan ikon media sosial untuk memudahkan interaksi lebih lanjut. Gunakan CSS untuk mengatur tampilan agar lebih menarik, 
+                memastikan bahwa elemen-elemen seperti latar belakang, warna teks, dan gaya input terlihat harmonis dan responsif.
+            </p>
+        </div>
+
+       <!-- --------------- FOOTER --------------- -->
+       <footer>
+        <div class="top-footer">
+          <p>Dhea Giri Nugraheni</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="index.html#menu">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#tutorials">Tutorial</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon"
+          onClick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+          <i class="uil uil-instagram"></i></div>
+          
+          <div class="icon"
+          onClick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+          <i class="uil uil-linkedin-alt"></i></div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Dhea</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

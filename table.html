@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+  />
+
+  <!-- --------- CSS ---------- -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- --------- FAVICON ---------- -->
+  <link
+    rel="shortcut icon"
+    href="assets/images/favicon.png"
+    type="image/x-icon"
+  />
+
+    <title>Tabel Data Mahasiswa</title>
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column; /* Change to column to stack footer below */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: 0vh;
+            padding-top: 0px; /* Tambahkan padding untuk navbar */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            flex-grow: 1px; /* Allow container to grow */
+        }
+
+
+        /*Styling untuk tabel */
+       
+
+        h2 {
+            margin-top: 100px; /* Add margin to the top of the heading */
+            color: white;
+        }
+
+        table {
+            margin: 20px auto; /* Center the table */
+            width: 100%; /* Full width of container */
+            border-collapse: collapse;
+            background-color: rgb(212, 235, 254);
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(13, 13, 13);
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2a6076;
+            color: #ffffff;
+        }
+
+        .featured-text-info p {
+            color: rgb(247, 247, 247);
+        }
+
+        /* Styling untuk footer */
+     
+        .active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: 0.3;
+}
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+            background: #fafafa;
+            padding: 40px 0; /* Adjust padding as needed */
+            width: 100%; /* Ensure it spans full width */
+            position: relative; /* Ensure proper stacking context */
+            left: 0; /* Align to the left */
+            bottom: 0; /* Stick to the bottom */
+        }
+
+        .top-footer p {
+            font-size: 25px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .middle-footer .footer-menu {
+            display: flex;
+        }
+
+        .footer_menu_list {
+            list-style: none;
+        }
+
+        .footer_menu_list a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            margin-inline: 20px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 30px;
+        }
+
+        .bottom-footer {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <!-- --------------- HEADER --------------- -->
+    <nav id="header">
+      <div class="nav-logo">
+        <p class="nav-name">Dhea</p>
+        <span>.</span>
+      </div>
+      <div class="nav-menu" id="myNavMenu">
+        <ul class="nav_menu_list">
+          <li class="nav_list">
+            <a href="index.html#home" class="nav-link ">Home</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="index.html#about" class="nav-link">About</a>
+            <div class="circle"></div>
+          </li>
+          
+            <li class="nav_list">
+              <a href="index.html#tutorials" class="nav-link active-link">Tutorial</a>
+              <div class="circle"></div>
+          </li>
+
+               
+          <li class="nav_list">
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <div class="circle"></div>
+        </li>
+
+          <li class="nav_list">
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <div class="circle"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <button class="btn" onclick="showModal()">
+        <a href="CV.html" class="nav-link">
+          Lihat CV </a>
+        </button>
+      </div>
+     
+    </div>
+      <div class="nav-menu-btn">
+        <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h2>Data Mahasiswa</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>IPK Sem 1</th>
+                    <th>IPK Sem 2</th>
+                    <th>IPK Sem 3</th>
+                    <th>IPK Sem 4</th>
+                    <th>IPK Sem 5</th>
+                    <th>IPK Sem 6</th>
+                    <th>IPK Sem 7</th>
+                    <th>IPK Sem 8</th>
+                    <th>Jurusan</th>
+                    <th>Fakultas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>344900311</td>
+                    <td>Mercy S Batuani</td>
+                    <td>3.0</td>
+                    <td>3.2</td>
+                    <td>3.4</td>
+                    <td>3.2</td>
+                    <td>3.5</td>
+                    <td>3.4</td>
+                    <td>3.6</td>
+                    <td>3.9</td>
+                    <td>Sistem Informasi</td>
+                    <td>Fakultas Teknik</td>
+                </tr>
+                <tr>
+                    <td>344900412</td>
+                    <td>Bagas Suni</td>
+                    <td>2.3</td>
+                    <td>2.5</td>
+                    <td>2.7</td>
+                    <td>3.0</td>
+                    <td>2.9</td>
+                    <td>3.1</td>
+                    <td>3.4</td>
+                    <td>4.0</td>
+                    <td>Teknik Sipil</td>
+                    <td>Fakultas Teknik</td>
+                </tr>
+                <tr>
+                    <td>399900309</td>
+                    <td>Raya Billgates</td>
+                    <td>3.0</td>
+                    <td>3.0</td>
+                    <td>3.5</td>
+                    <td>3.0</td>
+                    <td>3.3</td>
+                    <td>3.6</td>
+                    <td>3.8</td>
+                    <td>3.9</td>
+                    <td>Kedokteran Gigi</td>
+                    <td>Fakultas Kedokteran Gigi</td>
+                </tr>
+                <tr>
+                    <td>300900310</td>
+                    <td>Naulu Devi</td>
+                    <td>4.0</td>
+                    <td>3.9</td>
+                    <td>3.9</td>
+                    <td>4.0</td>
+                    <td>3.8</td>
+                    <td>3.6</td>
+                    <td>3.9</td>
+                    <td>4.0</td>
+                    <td>Ilmu Komunikasi</td>
+                    <td>Fakultas Ilmu Sosial dan Ilmu Politik</td>
+                </tr>
+                <tr>
+                    <td>388900310</td>
+                    <td>Alexander</td>
+                    <td>3.0</td>
+                    <td>3.0</td>
+                    <td>3.5</td>
+                    <td>3.3</td>
+                    <td>3.2</td>
+                    <td>3.1</td>
+                    <td>3.6</td>
+                    <td>3.7</td>
+                    <td>Hukum</td>
+                    <td>Fakultas Hukum</td>
+                </tr>
+                <tr>
+                    <td>388900311</td>
+                    <td>Patric Pink</td>
+                    <td>3.9</td>
+                    <td>4.0</td>
+                    <td>3.8</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                    <td>3.9</td>
+                    <td>3.8</td>
+                    <td>3.9</td>
+                    <td>Hukum</td>
+                    <td>Fakultas Hukum</td>
+                </tr>
+                <tr>
+                    <td>388900312</td>
+                    <td>Sandy Tupai</td>
+                    <td>3.3</td>
+                    <td>3.5</td>
+                    <td>3.8</td>
+                    <td>3.7</td>
+                    <td>3.6</td>
+                    <td>3.6</td>
+                    <td>3.6</td>
+                    <td>3.6</td>
+                    <td>Teknik Mesin</td>
+                    <td>Fakultas Teknik</td>
+                </tr>
+                <tr>
+                    <td>388900313</td>
+                    <td>Aisya Purnama</td>
+                    <td>3.4</td>
+                    <td>3.5</td>
+                    <td>3.6</td>
+                    <td>3.7</td>
+                    <td>3.8</td>
+                    <td>3.9</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                    <td>Ilmu Komunikasi</td>
+                    <td>Fakultas Ilmu Sosial dan Ilmu Politik</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="featured-text-info">
+            <span>Ini adalah tabel data mahasiswa.</span>
+        </p>
+    </div>
+
+   <!-- --------------- FOOTER --------------- -->
+   <footer>
+    <div class="top-footer">
+      <p>Dhea Giri Nugraheni</p>
+    </div>
+    <div class="middle-footer">
+      <ul class="footer-menu">
+        <li class="footer_menu_list">
+          <a href="index.html#menu">Home</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="index.html#about">About</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="index.html#tutorials">Tutorial</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="index.html#projects">Projects</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="index.html#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-social-icons">
+      <div class="icon"
+      onClick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+      <i class="uil uil-instagram"></i></div>
+      
+      <div class="icon"
+      onClick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+      <i class="uil uil-linkedin-alt"></i></div>
+      <div class="icon"><i class="uil uil-dribbble"></i></div>
+      <div class="icon"><i class="uil uil-github-alt"></i></div>
+    </div>
+    <div class="bottom-footer">
+      <p>
+        Copyright &copy;
+        <a href="#home" style="text-decoration: none">Dhea</a> - All
+        rights reserved
+      </p>
+    </div>
+  </footer>
+</div>
+
+<!-- ----- TYPING JS Link ----- -->
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+<!-- ----- SCROLL REVEAL JS Link----- -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- ----- MAIN JS ----- -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

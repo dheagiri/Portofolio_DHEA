@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+  />
+
+  <!-- --------- CSS ---------- -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- --------- FAVICON ---------- -->
+  <link
+    rel="shortcut icon"
+    href="assets/images/favicon.png"
+    type="image/x-icon"
+  />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Menggambar Gambar di Canvas</title>
+    <style>
+      /* Menambahkan border pada elemen canvas agar terlihat */
+      canvas {
+        border: 1px solid #d3d3d3;
+        
+      }
+      
+      .active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: 0.3;
+}
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Dhea</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#tutorials" class="nav-link active-link">Tutorial</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-button">
+                <button class="btn" onclick="showModal()">
+                <a href="CV.html" class="nav-link">
+                  Lihat CV </a>
+                </button>
+              </div>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+  
+    <p>Pilih gambar:</p>
+    <!-- Elemen gambar yang sumbernya akan ditentukan -->
+    <img
+      id="gambar"
+      src="assets/images/dhea.jpg"
+      alt="Gambar"
+      width="220"
+      height="277"
+    />
+
+    <!-- Elemen canvas tempat gambar akan digambar -->
+    <canvas id="kanvas" width="220" height="277"></canvas>
+
+    <!-- Tombol untuk menjalankan fungsi menggambar -->
+    <p><button onclick="kanvas()">Pilih Gambar</button></p>
+
+    <script>
+      /* Fungsi untuk menggambar gambar ke dalam canvas */
+      function kanvas() {
+        // Mendapatkan elemen canvas
+        var c = document.getElementById("kanvas");
+
+        // Mendapatkan konteks 2D dari canvas, diperlukan untuk menggambar
+        var ctx = c.getContext("2d");
+
+        // Mendapatkan elemen gambar berdasarkan ID-nya
+        var img = document.getElementById("gambar");
+
+        // Menggambar gambar ke dalam canvas pada koordinat (10, 10)
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+      <!-- --------------- FOOTER --------------- -->
+      <footer>
+        <div class="top-footer">
+          <p>Dhea Giri Nugraheni</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="index.html#menu">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#tutorials">Tutorial</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon"
+          onClick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+          <i class="uil uil-instagram"></i></div>
+          
+          <div class="icon"
+          onClick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+          <i class="uil uil-linkedin-alt"></i></div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Dhea</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

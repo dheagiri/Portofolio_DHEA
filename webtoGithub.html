@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <title>Portfolio</title>
+    
+    <style>
+      /* Navbar style */
+      #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #121212;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Container padding to avoid overlap */
+      .container {
+        padding-top: 50px; /* Adjust this value based on the height of your navbar */
+      }
+
+      /* Tutorial box style */
+      .tutorial-box {
+        background-color: #fcf3e3;
+        color: #2d2e7e;
+        padding: 20px; 
+        margin: 80px auto; 
+        max-width: 800px; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      }
+
+      .tutorial-step {
+        margin-bottom: 15px;
+      }
+
+      .tutorial-step-title {
+        font-weight: bold;
+        color: #a64444;
+      }
+
+      /* Code box styling */
+      pre {
+        background-color: #f47ba3;
+        border-radius: 5px;
+        overflow-x: auto;
+        color: #2d2e7e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Dhea</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html#home" class="nav-link">Home</a>
+            </li>
+            <li class="nav_list">
+              <a href="index.html#about" class="nav-link">About</a>
+            </li>
+            <li class="nav_list">
+              <a href="index.html#tutorials" class="nav-link active-link">Tutorial</a>
+            </li>
+            <li class="nav_list">
+              <a href="index.html#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav_list">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-button">
+          <button class="btn">
+            <a href="CV.html" class="nav-link">Lihat CV</a>
+          </button>
+        </div>
+      </nav>
+
+      <!-- --------------- TUTORIAL SECTION --------------- -->
+      <div class="tutorial-box">
+        <h2 style="text-align: center;">Tutorial: Deploy Website ke GitHub</h2>
+        
+        <div class="tutorial-step">
+          <p class="tutorial-step-title">Langkah 1: Buat Repository di GitHub</p>
+          <p>Buka <a href="https://github.com" target="_blank" style="color: #080808;">GitHub</a> dan login. Klik New di bagian repository atau ikon (+) di pojok kanan atas, lalu pilih New repository. Beri nama repository dan pilih Public. Klik Create repository.</p>
+        </div>
+        <div class="tutorial-step">
+          <p class="tutorial-step-title">Langkah 2: Tambahkan File ke Repository</p>
+          <p>Jika file proyek Anda sudah ada di komputer, Anda bisa meng-upload langsung ke GitHub atau menggunakan Git.</p>
+          <ul>
+            <li><strong>Opsi A:</strong> Upload langsung ke GitHub.</li>
+            <li><strong>Opsi B:</strong> Gunakan Git untuk push file dari command line:</li>
+          </ul>
+          <pre><code>
+            git  init
+            git add .
+            git commit -m "Initial commit"
+            git branch -M main
+            git remote add origin https://github.com/username-anda/my-website.git
+            git push -u origin main
+          </code></pre>
+        </div>
+        <div class="tutorial-step">
+          <p class="tutorial-step-title">Langkah 3: Aktifkan GitHub Pages</p>
+          <p>Buka tab Settings pada repository Anda, gulir ke bagian Pages, pilih branch yang ingin diterbitkan (biasanya <code>main</code>), lalu klik Save.</p>
+        </div>
+        <div class="tutorial-step">
+          <p class="tutorial-step-title">Langkah 4: Tunggu Hingga Situs Diterbitkan</p>
+          <p>Tunggu beberapa menit agar situs Anda dapat diakses di URL yang diberikan di pengaturan Pages.</p>
+        </div>
+      </div>
+
+      <!-- --------------- FOOTER --------------- -->
+      <footer>
+        <div class="top-footer">
+          <p>Dhea Giri Nugraheni</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list"><a href="#home">Home</a></li>
+            <li class="footer_menu_list"><a href="#about">About</a></li>
+            <li class="footer_menu_list"><a href="#tutorials">Tutorial</a></li>
+            <li class="footer_menu_list"><a href="#projects">Projects</a></li>
+            <li class="footer_menu_list"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon" onclick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+            <i class="uil uil-instagram"></i>
+          </div>
+          <div class="icon" onclick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+            <i class="uil uil-linkedin-alt"></i>
+          </div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon" onclick="window.open('https://github.com/dheagiri', '_blank')">
+            <i class="uil uil-github-alt"></i>
+          </div>
+        </div>
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Dhea</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Dhea Giri Nugraheni</title>
+  <!-- --------- UNICONS ---------- -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+  <!-- --------- CSS ---------- -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- --------- FAVICON ---------- -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <style>
+       /* Menambahkan jarak pada bagian atas kontainer */
+       .cv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       }
+ 
+
+/* Gambar CV yang diatur agar tampak lebih kecil dan proporsional */
+.cv-container img {
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5x;
+    margin-top: 150px; 
+
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Dhea</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#tutorials" class="nav-link">Tutorial</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav_list">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn" onclick="downloadCV()">Download CV</button>
+        </div>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
+    <!-- CV Display Section -->
+    <div class="cv-container">
+        <img src="assets/images/cvdhea.jpeg" alt="CV of Dhea Giri Nugraheni">
+    </div>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+          <p>Dhea Giri Nugraheni</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="index.html#menu">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#tutorials">Tutorial</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon"
+          onClick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+          <i class="uil uil-instagram"></i></div>
+          
+          <div class="icon"
+          onClick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+          <i class="uil uil-linkedin-alt"></i></div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Dhea</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      function downloadCV() {
+        // Buat elemen <a> sementara untuk mendownload file
+        const link = document.createElement("a");
+        link.href = "assets/images/cvdhea.jpeg"; // ganti dengan path aktual dari file
+        link.download = "cvdhea.jpeg"; // nama file yang akan diunduh
+        link.click(); // klik otomatis untuk memulai unduhan
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+  />
+
+  <!-- --------- CSS ---------- -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- --------- FAVICON ---------- -->
+  <link
+    rel="shortcut icon"
+    href="assets/images/favicon.png"
+    type="image/x-icon"
+  />
+
+
+    <title>Geolocation API</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column; /* Change to column to stack footer below */
+            justify-content: center;
+            align-items: center;
+            color: #ebeaea;
+            height: 100vh;
+            margin-top: 0vh;
+            padding-top: 0px; /* Tambahkan padding untuk navbar */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            flex-grow: 1px; 
+            
+        }
+
+     
+        .active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: 0.3;
+}
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+        footer {
+          color: #000000;
+          width: 100%;
+        }
+
+      h1 {
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 100px;
+        margin-top: 100px;
+      }
+
+      button {
+  right: 20px;
+  bottom: 20px;
+  background: var(--first-color);
+  color: var(--color-white);
+  border-radius: 30px;
+  padding: 15px 30px;
+
+
+      }
+
+      .tutorial-box {
+    border: 2px solid #5e45c1;
+    border-radius: 5px;
+    background-color: #fcf3e3;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 900px; 
+    width: 80%; 
+    margin: 0 auto; 
+    text-align: left;
+    margin-top: 20px; 
+
+      
+    }
+    .tutorial-box p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .tutorial-box code {
+        background-color: #e8e8e8;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: Consolas, monospace;
+        color: #d63384;
+    }     
+
+    </style>
+ 
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Dhea</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html#home" class="nav-link ">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="index.html#about" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+            
+              <li class="nav_list">
+                <a href="index.html#tutorials" class="nav-link active-link">Tutorial</a>
+                <div class="circle"></div>
+            </li>
+
+                 
+            <li class="nav_list">
+              <a href="index.html#projects" class="nav-link">Projects</a>
+              <div class="circle"></div>
+          </li>
+
+            <li class="nav_list">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-button">
+          <button class="btn" onclick="showModal()">
+          <a href="CV.html" class="nav-link">
+            Lihat CV </a>
+          </button>
+        </div>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
+      <h1>Get User Location with Geolocation API</h1>
+      <button onclick="getLocation()">Get Location</button>
+
+      <div id="location">
+        <h3>Your Location:</h3>
+        <p>Latitude: <span id="latitude"></span></p>
+        <p>Longitude: <span id="longitude"></span></p>
+        <p>Accuracy: <span id="accuracy"></span> meters</p>
+      </div>
+    </div>
+
+    <div class="tutorial-box">
+      <h2 style="text-align: center;">Tutorial: HTML5-API Geolocation</h2>
+    <p> Kode di atas memungkinkan aplikasi web untuk mendapatkan dan menampilkan lokasi pengguna dengan menggunakan Geolocation API.
+        Ketika pengguna mengklik tombol untuk memulai permintaan lokasi, fungsi getLocation() dijalankan. Di dalam fungsi ini, browser
+        dicek apakah mendukung Geolocation API dengan memeriksa navigator.geolocation. Jika didukung, maka navigator.geolocation.getCurrentPosition() 
+        dipanggil untuk mendapatkan lokasi pengguna. Fungsi ini menerima dua parameter: showPosition sebagai callback ketika lokasi berhasil didapat, 
+        dan showError untuk menangani jika terjadi kesalahan. Jika browser tidak mendukung Geolocation API, maka pesan peringatan akan ditampilkan kepada pengguna.
+      </p></div>
+    <script>
+      // Function to get user location
+      function getLocation() {
+        const locationBox = document.getElementById("location");
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+
+      }
+
+      // Function to display position
+      function showPosition(position) {
+        document.getElementById("latitude").innerHTML =
+          position.coords.latitude;
+        document.getElementById("longitude").innerHTML =
+          position.coords.longitude;
+        document.getElementById("accuracy").innerHTML =
+          position.coords.accuracy + " meters";
+
+        // Show the location div
+        const locationBox = document.getElementById("location");
+        locationBox.style.display = "block";
+
+        // Revert button state
+    
+      }
+
+      // Function to handle errors
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+          case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+        }
+
+        // Revert button state even in case of an error
+   
+      }
+    </script>
+
+     <!-- --------------- FOOTER --------------- -->
+     <footer>
+      <div class="top-footer">
+        <p>Dhea Giri Nugraheni</p>
+      </div>
+      <div class="middle-footer">
+        <ul class="footer-menu">
+          <li class="footer_menu_list">
+            <a href="index.html#menu">Home</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="index.html#about">About</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="index.html#tutorials">Tutorial</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="index.html#projects">Projects</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-social-icons">
+        <div class="icon"
+        onClick="window.open('https://www.instagram.com/dheagiri/profilecard/?igsh=NjM0NnZxcHI1M2hp', '_blank')">
+        <i class="uil uil-instagram"></i></div>
+        
+        <div class="icon"
+        onClick="window.open('https://www.linkedin.com/in/dheagiri/', '_blank')">
+        <i class="uil uil-linkedin-alt"></i></div>
+        <div class="icon"><i class="uil uil-dribbble"></i></div>
+        <div class="icon"><i class="uil uil-github-alt"></i></div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          Copyright &copy;
+          <a href="#home" style="text-decoration: none">Dhea</a> - All
+          rights reserved
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ----- TYPING JS Link ----- -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <!-- ----- SCROLL REVEAL JS Link----- -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- ----- MAIN JS ----- -->
+  <script src="assets/js/main.js"></script>
+  </body>
+</html>
